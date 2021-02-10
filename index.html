@@ -3,6 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title> METEO VILLES </title>
+       
+        <script>
+        function showCity(){
+ 	 // 1. Récupérer la valeur courante du menu 
+  	// Pour ça on va faire :
+  	let nomVilleSelectionnee = document.getElementById("ville").value;
+	
+	document.getElementById("affichage").innerHTML = nomVilleSelectionnee;
+ 
+	
+ 	 // 2. Récupérer la liste de toutes les div correspondant à une div de météo 
+ 	 // Pour ça on va faire :
+  	let cities = document.getElementsByClassName("city");
+
+  	// 3. Parcourir la liste des div et cacher celles qui ne sont pas sélectionnées.
+  	// TODO : definir l : la taille max de votre tableau cities
+  	for (let i=0; i<4; i++) {
+   	 if (cities[i].id == nomVilleSelectionnee) {
+     
+       	cities[i].style.display = "";
+    	} else {
+    	
+       	cities[i].style.display = "none";
+   
+    	}
+  	}
+	}
+        </script>
+       
         <style>
         
         
@@ -46,38 +75,68 @@
         
         </style>
     </head>
-    <body>
+    <body onchange=showCity()>
 
+
+	
     <h1> TP METEO HTML </h1>
 
-	<div class="VILLES">
 
-    <div>
-    <h2 class="backgroudville">LYON</h2>
-    <p> 15°C, pluvieux</p>
-	 <img src="pluie.png" alt="Icone meteo pluvieux"  width="100">
-    </div>
+	<p> Choisir une ville :
+	<select id="ville">
+	<option id="vide" selected>Please choose an option</option>
+	<option id="LYON">LYON</option>
+	<option id="STRASBOURG">STRASBOURG</option>
+	<option id="MARSEILLE">MARSEILLE</option>	
+	</select>
+	
+	
+	<br>
+	 </p>
+	 Vous avez choisi : <p id="affichage"> </p>
+	<br>
+	<br>
+	
+	<div class="city" id="vide"> <p></p>
+	</div>
+	
+<div class="VILLES">
+	
+	<div class="city" id="LYON">
+    		<h2>LYON</h2>
+    		<p> 15°C, pluvieux</p>
+		<img src="pluie.png" alt="Icone meteo pluvieux"  width="100">
+	</div>
+	
 
-
-	<div>
-    <h2 class ="backgroudville">STRASBOURG</h2>
-    <p> 5°C, orageux</p>
-	<img src="rain.png" alt="Icone meteo orageux" width="100"> 
+	<div class="city" id="STRASBOURG">
+    		<h2>STRASBOURG</h2>
+		<p> 5°C, orageux</p>
+		<img src="rain.png" alt="Icone meteo orageux" width="100"> 
 	</div>
 
 
-	<div>
-	<h2 class ="backgroudville">MARSEILLE</h2>
-    <p> 24°C, ensoleille</p>
+	<div class="city" id="MARSEILLE">
+		<h2>MARSEILLE</h2>
+		<p> 24°C, ensoleille</p>
 	<img src="soleil.png" alt ="Icone meteo ensoeille"  width="100">
-    </div>
 	</div>
+	
+</div>
 
-
+		<script>
+		let cities = document.getElementsByClassName("city");
+		cities[1].style.display = "none";
+		cities[3].style.display = "none";
+		cities[2].style.display = "none";
+		</script>
+	
+	
+	
+	<br>
     <p id = "AUTEUR">Auteur: Hassan IDRISS p1809438<br>Icones meteo par Nook Fulloption <a href="https://thenounproject.com/search/collection/?q=weather">Cliquer ici</a>.</p>
     
     
     </body>
 </html>
-
 
