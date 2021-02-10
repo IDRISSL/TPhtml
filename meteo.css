@@ -1,0 +1,42 @@
+ <style>
+        
+        
+        h1  {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }  
+        
+        h2 {
+            color: rgb(0, 232, 15);
+        }  
+		.backgroudville {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+
+		#AUTEUR {
+            background-color: rgb(227, 247, 214);
+			color: black;
+        }
+
+		.VILLES{
+            		display: flex;
+			background-color: rgb(143, 103, 143)
+			 
+		
+        }
+
+		.VILLES div {
+			width: 8000px;
+			justify-content: space-evenly;
+            		border: solid 1px #000 ;
+        }
+        
+
+       
+        
+        </style>
